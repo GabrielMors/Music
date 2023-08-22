@@ -12,10 +12,11 @@
 		C4D8A64B2A944D1800B71F22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */; };
 		C4D8A6502A944D1900B71F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A64F2A944D1900B71F22 /* Assets.xcassets */; };
 		C4D8A6532A944D1900B71F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A6512A944D1900B71F22 /* LaunchScreen.storyboard */; };
-		C4D8A65F2A944EDC00B71F22 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */; };
-		C4D8A6602A944EDC00B71F22 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */; };
-		C4D8A6612A944EDC00B71F22 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */; };
+		C4D8A65F2A944EDC00B71F22 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65C2A944EDC00B71F22 /* NSAttributedString+Extension.swift */; };
+		C4D8A6602A944EDC00B71F22 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65D2A944EDC00B71F22 /* UIView+Extension.swift */; };
+		C4D8A6612A944EDC00B71F22 /* NSTextAttachment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65E2A944EDC00B71F22 /* NSTextAttachment+Extension.swift */; };
 		C4D8A6642A944EEE00B71F22 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */; };
+		C4D8A6682A94551F00B71F22 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6672A94551F00B71F22 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		C4D8A64F2A944D1900B71F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4D8A6522A944D1900B71F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4D8A6542A944D1900B71F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
-		C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
-		C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
+		C4D8A65C2A944EDC00B71F22 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		C4D8A65D2A944EDC00B71F22 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C4D8A65E2A944EDC00B71F22 /* NSTextAttachment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment+Extension.swift"; sourceTree = "<group>"; };
 		C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		C4D8A6672A94551F00B71F22 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,8 @@
 			children = (
 				C4D8A65B2A944EDC00B71F22 /* Extension */,
 				C4D8A6622A944EEE00B71F22 /* Model */,
+				C4D8A6652A94550000B71F22 /* Home */,
 				C4D8A65A2A944E4F00B71F22 /* Resource */,
-				C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */,
 				C4D8A6542A944D1900B71F22 /* Info.plist */,
 			);
 			path = AppMusic;
@@ -85,9 +87,9 @@
 		C4D8A65B2A944EDC00B71F22 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */,
-				C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */,
-				C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */,
+				C4D8A65C2A944EDC00B71F22 /* NSAttributedString+Extension.swift */,
+				C4D8A65D2A944EDC00B71F22 /* UIView+Extension.swift */,
+				C4D8A65E2A944EDC00B71F22 /* NSTextAttachment+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -98,6 +100,23 @@
 				C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C4D8A6652A94550000B71F22 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C4D8A6662A94550D00B71F22 /* Screen */,
+				C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C4D8A6662A94550D00B71F22 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C4D8A6672A94551F00B71F22 /* HomeScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,10 +191,11 @@
 			files = (
 				C4D8A64B2A944D1800B71F22 /* HomeViewController.swift in Sources */,
 				C4D8A6472A944D1800B71F22 /* AppDelegate.swift in Sources */,
-				C4D8A6612A944EDC00B71F22 /* NSTextAttachment + Extension.swift in Sources */,
+				C4D8A6612A944EDC00B71F22 /* NSTextAttachment+Extension.swift in Sources */,
 				C4D8A6492A944D1800B71F22 /* SceneDelegate.swift in Sources */,
-				C4D8A6602A944EDC00B71F22 /* UIView + Extension.swift in Sources */,
-				C4D8A65F2A944EDC00B71F22 /* NSAttributedString + Extension.swift in Sources */,
+				C4D8A6682A94551F00B71F22 /* HomeScreen.swift in Sources */,
+				C4D8A6602A944EDC00B71F22 /* UIView+Extension.swift in Sources */,
+				C4D8A65F2A944EDC00B71F22 /* NSAttributedString+Extension.swift in Sources */,
 				C4D8A6642A944EEE00B71F22 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
