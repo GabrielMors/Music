@@ -9,19 +9,27 @@
 /* Begin PBXBuildFile section */
 		C4D8A6472A944D1800B71F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6462A944D1800B71F22 /* AppDelegate.swift */; };
 		C4D8A6492A944D1800B71F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6482A944D1800B71F22 /* SceneDelegate.swift */; };
-		C4D8A64B2A944D1800B71F22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A64A2A944D1800B71F22 /* ViewController.swift */; };
+		C4D8A64B2A944D1800B71F22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */; };
 		C4D8A6502A944D1900B71F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A64F2A944D1900B71F22 /* Assets.xcassets */; };
 		C4D8A6532A944D1900B71F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A6512A944D1900B71F22 /* LaunchScreen.storyboard */; };
+		C4D8A65F2A944EDC00B71F22 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */; };
+		C4D8A6602A944EDC00B71F22 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */; };
+		C4D8A6612A944EDC00B71F22 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */; };
+		C4D8A6642A944EEE00B71F22 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4D8A6432A944D1800B71F22 /* AppMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D8A6462A944D1800B71F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D8A6482A944D1800B71F22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C4D8A64A2A944D1800B71F22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C4D8A64F2A944D1900B71F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4D8A6522A944D1900B71F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4D8A6542A944D1900B71F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
+		C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
+		C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,10 @@
 		C4D8A6452A944D1800B71F22 /* AppMusic */ = {
 			isa = PBXGroup;
 			children = (
+				C4D8A65B2A944EDC00B71F22 /* Extension */,
+				C4D8A6622A944EEE00B71F22 /* Model */,
 				C4D8A65A2A944E4F00B71F22 /* Resource */,
-				C4D8A64A2A944D1800B71F22 /* ViewController.swift */,
+				C4D8A64A2A944D1800B71F22 /* HomeViewController.swift */,
 				C4D8A6542A944D1900B71F22 /* Info.plist */,
 			);
 			path = AppMusic;
@@ -70,6 +80,24 @@
 				C4D8A6512A944D1900B71F22 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C4D8A65B2A944EDC00B71F22 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C4D8A65C2A944EDC00B71F22 /* NSAttributedString + Extension.swift */,
+				C4D8A65D2A944EDC00B71F22 /* UIView + Extension.swift */,
+				C4D8A65E2A944EDC00B71F22 /* NSTextAttachment + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C4D8A6622A944EEE00B71F22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4D8A6632A944EEE00B71F22 /* CardViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D8A64B2A944D1800B71F22 /* ViewController.swift in Sources */,
+				C4D8A64B2A944D1800B71F22 /* HomeViewController.swift in Sources */,
 				C4D8A6472A944D1800B71F22 /* AppDelegate.swift in Sources */,
+				C4D8A6612A944EDC00B71F22 /* NSTextAttachment + Extension.swift in Sources */,
 				C4D8A6492A944D1800B71F22 /* SceneDelegate.swift in Sources */,
+				C4D8A6602A944EDC00B71F22 /* UIView + Extension.swift in Sources */,
+				C4D8A65F2A944EDC00B71F22 /* NSAttributedString + Extension.swift in Sources */,
+				C4D8A6642A944EEE00B71F22 /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
