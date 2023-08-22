@@ -92,4 +92,71 @@ class CustomCardView: UIView {
     @objc private func tappedAddButton() {
         
     }
+    
+    // Categoria da música
+    lazy var cardCategoryTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
+    // Data categoria
+    lazy var cardCategoryDateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        label.textColor = .white
+        return label
+    }()
+    
+    // Titulo
+    lazy var cardTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 31, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    // Gostei e tempo
+    lazy var likeEndTimeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 31, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
+    }()
+    
+    // Descrição do titulo
+    lazy var descriptionTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private func addSubViews() {
+        addSubview(cardContainerView)
+        
+        cardContainerView.addSubview(cardImage)
+        cardContainerView.addSubview(overlayView)
+        
+        cardContainerView.addSubview(profileBorderView)
+        cardContainerView.addSubview(cardProfilePicture)
+        cardContainerView.addSubview(addProfileImageButton)
+        
+        cardContainerView.addSubview(cardCategoryTitleLabel)
+        cardContainerView.addSubview(cardCategoryDateLabel)
+        cardContainerView.addSubview(cardTitleLabel)
+        cardContainerView.addSubview(likeEndTimeLabel)
+        cardContainerView.addSubview(descriptionTitleLabel)
+        
+    }
 }
