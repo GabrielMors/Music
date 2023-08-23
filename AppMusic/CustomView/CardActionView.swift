@@ -48,12 +48,79 @@ class CardActionView: UIView {
         return view
     }()
     
-    private func addSubViews() {
-        addSubview(downloadView)
-        addSubview(notInterestedView)
-        addSubview(playView)
-        addSubview(likeView)
-        addSubview(moreView)
+    lazy var downloadButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.setBackgroundImage(UIImage(named: "download")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.layer.cornerRadius = 22.5
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(tappedDownloadButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func tappedDownloadButton() {
+        
+    }
+    
+    lazy var notInterestedButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.setBackgroundImage(UIImage(named: "restrict")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.layer.cornerRadius = 22.5
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(tappedrestrictButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func tappedrestrictButton() {
+        
+    }
+    
+    lazy var playButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.setBackgroundImage(UIImage(named: "playBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.layer.cornerRadius = 35
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(tappedplayButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func tappedplayButton() {
+        
+    }
+    
+    lazy var likeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.setBackgroundImage(UIImage(named: "like")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.layer.cornerRadius = 22.5
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(tappedlikeButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func tappedlikeButton() {
+        
+    }
+    
+    lazy var moreButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.setBackgroundImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.layer.cornerRadius = 22.5
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(tappedmoreButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func tappedmoreButton() {
+        
     }
     
     override init(frame: CGRect) {
@@ -63,5 +130,28 @@ class CardActionView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addSubViews() {
+        addSubview(stackView)
+        stackView.addArrangedSubview(notInterestedView)
+        stackView.addArrangedSubview(playView)
+        stackView.addArrangedSubview(likeView)
+        
+        downloadView.addSubview(downloadButton)
+        notInterestedView.addSubview(notInterestedButton)
+        playView.addSubview(playButton)
+        likeView.addSubview(likeButton)
+        moreView.addSubview(moreButton)
+    }
+    
+    private func setupConstraints() {
+        
+        self.stackView.pin(to: self)
+        
+        NSLayoutConstraint.activate([
+        
+        
+        ])
     }
 }
