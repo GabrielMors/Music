@@ -149,7 +149,7 @@ class CustomCardView: UIView {
         self.dataModel = cardData
         super.init(frame: frame)
         addSubViews()
-        
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -234,6 +234,23 @@ class CustomCardView: UIView {
             cardTitleLabel.leadingAnchor.constraint(equalTo: cardContainerView.leadingAnchor, constant: 20),
             cardTitleLabel.trailingAnchor.constraint(equalTo: cardCategoryDateLabel.trailingAnchor, constant: -20),
             
+            likeEndTimeLabel.topAnchor.constraint(equalTo: cardTitleLabel.bottomAnchor, constant: 10),
+            likeEndTimeLabel.centerXAnchor.constraint(equalTo: cardContainerView.centerXAnchor),
+            
+            descriptionTitleLabel.topAnchor.constraint(equalTo: likeEndTimeLabel.bottomAnchor, constant: 30),
+            descriptionTitleLabel.leadingAnchor.constraint(equalTo: cardContainerView.leadingAnchor, constant: 40),
+            descriptionTitleLabel.trailingAnchor.constraint(equalTo: cardContainerView.trailingAnchor, constant: -40),
+            
         ])
+    }
+    
+    public func setupView(data: CardViewModel) {
+        cardCategoryTitleLabel.text = data.categoryName
+        cardCategoryDateLabel.text = data.categoryDate
+        cardTitleLabel.text = data.cardTitle
+        likeEndTimeLabel.attributedText = NSAttributedString.featureText(data.likeCount ?? "", data.duration ?? "")
+        descriptionTitleLabel.text = data.cardDescription
+        cardImage.image = UIImage(named: data.cardImage ?? "")
+        cardProfilePicture.image = UIImage(named: data.categoryImage ?? "")
     }
 }
