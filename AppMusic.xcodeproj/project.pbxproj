@@ -19,6 +19,7 @@
 		C4D8A6682A94551F00B71F22 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6672A94551F00B71F22 /* HomeScreen.swift */; };
 		C4D8A66B2A945D7300B71F22 /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A66A2A945D7300B71F22 /* CardViewTableViewCell.swift */; };
 		C4D8A66E2A94BC5600B71F22 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A66D2A94BC5600B71F22 /* CustomCardView.swift */; };
+		C4D8A6D72A9674B100B71F22 /* CardActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6D62A9674B100B71F22 /* CardActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C4D8A6672A94551F00B71F22 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		C4D8A66A2A945D7300B71F22 /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
 		C4D8A66D2A94BC5600B71F22 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
+		C4D8A6D62A9674B100B71F22 /* CardActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D8A66D2A94BC5600B71F22 /* CustomCardView.swift */,
+				C4D8A6D62A9674B100B71F22 /* CardActionView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				C4D8A6612A944EDC00B71F22 /* NSTextAttachment+Extension.swift in Sources */,
 				C4D8A6492A944D1800B71F22 /* SceneDelegate.swift in Sources */,
 				C4D8A6682A94551F00B71F22 /* HomeScreen.swift in Sources */,
+				C4D8A6D72A9674B100B71F22 /* CardActionView.swift in Sources */,
 				C4D8A6602A944EDC00B71F22 /* UIView+Extension.swift in Sources */,
 				C4D8A66E2A94BC5600B71F22 /* CustomCardView.swift in Sources */,
 				C4D8A65F2A944EDC00B71F22 /* NSAttributedString+Extension.swift in Sources */,
