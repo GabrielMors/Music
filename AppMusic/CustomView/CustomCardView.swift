@@ -143,6 +143,12 @@ class CustomCardView: UIView {
         return label
     }()
     
+    lazy var actionView: CardActionView = {
+        let view = CardActionView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init() {
         let frame = CGRect.zero
         super.init(frame: frame)
@@ -169,6 +175,7 @@ class CustomCardView: UIView {
         cardContainerView.addSubview(cardTitleLabel)
         cardContainerView.addSubview(likeEndTimeLabel)
         cardContainerView.addSubview(descriptionTitleLabel)
+        cardContainerView.addSubview(actionView)
         updateLayout(for: viewMode ?? .card)
     }
     
@@ -186,6 +193,7 @@ class CustomCardView: UIView {
             self.containerBottonConstraints?.constant = -15
             descriptionTitleLabel.isHidden = true
         }
+        actionView.updateLayout(for: mode)
     }
     
     private func setupConstraints() {
@@ -239,6 +247,10 @@ class CustomCardView: UIView {
             descriptionTitleLabel.leadingAnchor.constraint(equalTo: cardContainerView.leadingAnchor, constant: 40),
             descriptionTitleLabel.trailingAnchor.constraint(equalTo: cardContainerView.trailingAnchor, constant: -40),
             
+            actionView.bottomAnchor.constraint(equalTo: cardContainerView.bottomAnchor, constant: -20),
+            actionView.leadingAnchor.constraint(equalTo: cardContainerView.leadingAnchor, constant: 20),
+            actionView.trailingAnchor.constraint(equalTo: cardContainerView.trailingAnchor, constant: -20),
+            actionView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     

@@ -126,6 +126,7 @@ class CardActionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
