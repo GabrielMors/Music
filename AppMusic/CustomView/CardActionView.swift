@@ -151,7 +151,50 @@ class CardActionView: UIView {
         
         NSLayoutConstraint.activate([
         
+            downloadButton.centerXAnchor.constraint(equalTo: downloadView.centerXAnchor),
+            downloadButton.centerYAnchor.constraint(equalTo: downloadView.centerYAnchor),
+            downloadButton.widthAnchor.constraint(equalToConstant: 45),
+            downloadButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            notInterestedButton.centerXAnchor.constraint(equalTo: notInterestedView.centerXAnchor),
+            notInterestedButton.centerYAnchor.constraint(equalTo: notInterestedView.centerYAnchor),
+            notInterestedButton.widthAnchor.constraint(equalToConstant: 45),
+            notInterestedButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            playButton.centerXAnchor.constraint(equalTo: playView.centerXAnchor),
+            playButton.centerYAnchor.constraint(equalTo: playView.centerYAnchor),
+            playButton.widthAnchor.constraint(equalToConstant: 70),
+            playButton.heightAnchor.constraint(equalToConstant: 70),
+            
+            likeButton.centerXAnchor.constraint(equalTo: likeView.centerXAnchor),
+            likeButton.centerYAnchor.constraint(equalTo: likeView.centerYAnchor),
+            likeButton.widthAnchor.constraint(equalToConstant: 45),
+            likeButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            moreButton.centerXAnchor.constraint(equalTo: moreView.centerXAnchor),
+            moreButton.centerYAnchor.constraint(equalTo: moreView.centerYAnchor),
+            moreButton.widthAnchor.constraint(equalToConstant: 45),
+            moreButton.heightAnchor.constraint(equalToConstant: 45),
         
         ])
+    }
+    
+    public func updateLayout(for mode: ViewMode) {
+        if mode == .full {
+            downloadView.isHidden = false
+            moreView.isHidden = false
+            
+            stackView.addArrangedSubview(downloadView)
+            stackView.addArrangedSubview(notInterestedView)
+            stackView.addArrangedSubview(playView)
+            stackView.addArrangedSubview(likeView)
+            stackView.addArrangedSubview(moreView)
+        } else {
+            downloadView.isHidden = true
+            moreView.isHidden = true
+            
+            stackView.removeArrangedSubview(downloadView)
+            stackView.removeArrangedSubview(moreView)
+        }
     }
 }
