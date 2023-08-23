@@ -69,4 +69,43 @@ class DetailScreen: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func addSubVies() {
+        addSubview(scrollView)
+        scrollView.addSubview(cardView)
+        scrollView.addSubview(tableView)
+        addSubview(closeButton)
+    }
+    
+    private func setupConstraints() {
+        let window = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .compactMap({$0 as? UIWindowScene}).first?.windows
+            .filter({$0.isKeyWindow}).first
+        
+        let topPadding = window?.safeAreaInsets.top
+        
+        scrollView.pin(to: self)
+        
+        NSLayoutConstraint.activate([
+        
+            cardView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -(topPadding ?? 0)),
+            cardView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 500),
+            cardView.widthAnchor.constraint(equalToConstant: self.frame.size.width),
+            
+            tableView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            tableView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            tableView.heightAnchor.constraint(equalToConstant: CGFloat((80 * (cardModel?.cardList?.count ?? 0)) + 20)),
+            tableView.widthAnchor.constraint(equalToConstant: self.frame.size.width),
+            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            
+            closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            closeButton.widthAnchor.constraint(equalToConstant: 30),
+            closeButton.heightAnchor.constraint(equalToConstant: 30),
+            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10)
+        ])
+    }
+    
+    
 }
