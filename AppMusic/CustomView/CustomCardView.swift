@@ -108,6 +108,7 @@ class CustomCardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 11, weight: .regular)
         label.textColor = .white
+        label.textAlignment = .center
         return label
     }()
     
@@ -142,11 +143,8 @@ class CustomCardView: UIView {
         return label
     }()
     
-    
-    init(viewmode: ViewMode, cardData: CardViewModel) {
+    init() {
         let frame = CGRect.zero
-        self.viewMode = viewmode
-        self.dataModel = cardData
         super.init(frame: frame)
         addSubViews()
         setupConstraints()
@@ -232,7 +230,7 @@ class CustomCardView: UIView {
             
             cardTitleLabel.topAnchor.constraint(equalTo: cardCategoryDateLabel.bottomAnchor, constant: 20),
             cardTitleLabel.leadingAnchor.constraint(equalTo: cardContainerView.leadingAnchor, constant: 20),
-            cardTitleLabel.trailingAnchor.constraint(equalTo: cardCategoryDateLabel.trailingAnchor, constant: -20),
+            cardTitleLabel.trailingAnchor.constraint(equalTo: cardContainerView.trailingAnchor, constant: -20),
             
             likeEndTimeLabel.topAnchor.constraint(equalTo: cardTitleLabel.bottomAnchor, constant: 10),
             likeEndTimeLabel.centerXAnchor.constraint(equalTo: cardContainerView.centerXAnchor),
