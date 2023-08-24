@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol DetailScreenProtocol: AnyObject {
+    func tappedCloseButton()
+}
+
 class DetailScreen: UIView {
+    
+    private weak var delegate: DetailScreenProtocol?
+    
+    public func setDelegate(delegate: DetailScreenProtocol?) {
+        self.delegate = delegate
+    }
     
     var cardModel: CardViewModel?
     var navBarTopAnchor: NSLayoutConstraint?
@@ -59,11 +69,16 @@ class DetailScreen: UIView {
     }()
     
     @objc private func tappedCloseButton() {
-        
+        delegate?.tappedCloseButton()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(dataView: CardViewModel) {
+        super.init(frame: CGRect())
+        self.cardModel = dataView
+        DispatchQueue.main.async {
+            self.addSubVies()
+            self.setupConstraints()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -107,5 +122,10 @@ class DetailScreen: UIView {
         ])
     }
     
-    
+    public func configAllDelegate(tableViewDelegate: UITableViewDelegate, tableviewDataSource: UITableViewDataSource, scrollViewDelegate: UIScrollViewDelegate, detailScreenProtocol: DetailScreenProtocol) {
+        tableView.delegate = tableViewDelegate
+        tableView.dataSource = tableviewDataSource
+        scrollView.delegate = scrollViewDelegate
+        delegate = detailScreenProtocol
+    }
 }
