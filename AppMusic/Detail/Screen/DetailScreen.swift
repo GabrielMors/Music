@@ -15,10 +15,6 @@ class DetailScreen: UIView {
     
     private weak var delegate: DetailScreenProtocol?
     
-    public func setDelegate(delegate: DetailScreenProtocol?) {
-        self.delegate = delegate
-    }
-    
     var cardModel: CardViewModel?
     var navBarTopAnchor: NSLayoutConstraint?
     
@@ -35,9 +31,8 @@ class DetailScreen: UIView {
     }()
     
     lazy var cardView: CustomCardView = {
-        let view = CustomCardView()
+        let view = CustomCardView(mode: .full)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.actionView.updateLayout(for: .full)
         view.cardContainerView.layer.cornerRadius = 0.0
         view.setupView(data: self.cardModel ?? CardViewModel())
         return view
@@ -72,20 +67,20 @@ class DetailScreen: UIView {
         delegate?.tappedCloseButton()
     }
     
-    init(dataView: CardViewModel) {
-        super.init(frame: CGRect())
+    init(dataView: CardViewModel?) {
+       super.init(frame: CGRect())
         self.cardModel = dataView
         DispatchQueue.main.async {
-            self.addSubVies()
+            self.addSubViews()
             self.setupConstraints()
         }
-    }
+   }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func addSubVies() {
+    private func addSubViews() {
         addSubview(scrollView)
         scrollView.addSubview(cardView)
         scrollView.addSubview(tableView)
@@ -95,12 +90,13 @@ class DetailScreen: UIView {
     private func setupConstraints() {
         let window = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
-            .compactMap({$0 as? UIWindowScene}).first?.windows
-            .filter({$0.isKeyWindow}).first
+            .compactMap({$0 as? UIWindowScene})
+            .first?.windows.filter({$0.isKeyWindow}).first
         
         let topPadding = window?.safeAreaInsets.top
+        print(topPadding as Any)
         
-        scrollView.pin(to: self)
+        self.scrollView.pin(to: self)
         
         NSLayoutConstraint.activate([
         
