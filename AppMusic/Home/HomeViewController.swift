@@ -9,26 +9,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
     var screen:HomeViewControllerScreen?
     
     override func loadView() {
-        self.screen = HomeViewControllerScreen()
-        self.screen?.configTableViewProtocols(delegate: self, dataSource: self)
-        self.view = self.screen
+        screen = HomeViewControllerScreen()
+        view = screen
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        screen?.configTableViewProtocols(delegate: self, dataSource: self)
     }
-
-
 }
 
-
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CardData.count
@@ -41,18 +35,14 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let VC = DetailViewController()
-        VC.cardModel = CardData[indexPath.row]
-        VC.modalPresentationStyle = .fullScreen
-        present(VC, animated: true, completion: nil)
+        let viewController = DetailViewController()
+        viewController.cardModel = CardData[indexPath.row]
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
     }
-    
-    
-    
-    
 }
 
