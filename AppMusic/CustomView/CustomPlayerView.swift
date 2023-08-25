@@ -20,7 +20,7 @@ class CustomPlayerView: UIView {
     }()
     
     lazy var marqueeLabel: MarqueeLabel = {
-       let label = MarqueeLabel()
+        let label = MarqueeLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Avenir-Heavy", size: 18)
         label.textColor = .white.withAlphaComponent(0.8)
@@ -77,8 +77,8 @@ class CustomPlayerView: UIView {
             imageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 90),
             
-            marqueeLabel.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor,constant: 10),
-            marqueeLabel.trailingAnchor.constraint(equalTo: self.pausePlayBtn.leadingAnchor,constant: -5),
+            marqueeLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 10),
+            marqueeLabel.trailingAnchor.constraint(equalTo: pausePlayBtn.leadingAnchor,constant: -5),
             marqueeLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 32),
             
             pausePlayBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
@@ -86,17 +86,16 @@ class CustomPlayerView: UIView {
             pausePlayBtn.heightAnchor.constraint(equalToConstant: 40),
             pausePlayBtn.widthAnchor.constraint(equalToConstant: 40),
             
-            trackBar.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor),
+            trackBar.leadingAnchor.constraint(equalTo: imageView.trailingAnchor),
             trackBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             trackBar.topAnchor.constraint(equalTo: self.topAnchor)
         ])
     }
     
-    
     @objc func changeTrackBar() {
-        self.time += 0.001
-        self.trackBar.progress = Float(self.time / 120)
-        if self.time >= 120{
+        time += 0.001
+        trackBar.progress = Float(self.time / 120)
+        if time >= 120{
             videoTimer?.invalidate()
             videoTimer = nil
         }

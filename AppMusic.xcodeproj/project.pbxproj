@@ -108,7 +108,7 @@
 			children = (
 				C4EF39502A98D04000B3203F /* Cell */,
 				C4EF39522A98D04000B3203F /* CustomView */,
-				C4EF395B2A98D04100B3203F /* DetailViewController */,
+				C4EF395B2A98D04100B3203F /* Detail */,
 				C4EF39632A98D04100B3203F /* Extension */,
 				C4EF39572A98D04000B3203F /* Home */,
 				C4EF39672A98D04100B3203F /* Model */,
@@ -166,14 +166,14 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C4EF395B2A98D04100B3203F /* DetailViewController */ = {
+		C4EF395B2A98D04100B3203F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				C4EF395C2A98D04100B3203F /* DetailViewController.swift */,
 				C4EF395D2A98D04100B3203F /* Cell */,
 				C4EF39612A98D04100B3203F /* Screen */,
+				C4EF395C2A98D04100B3203F /* DetailViewController.swift */,
 			);
-			path = DetailViewController;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		C4EF395D2A98D04100B3203F /* Cell */ = {

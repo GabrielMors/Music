@@ -14,7 +14,7 @@ enum StateAnimation{
 
 class DetailViewController: UIViewController {
     
-    var screen:DetailViewControllerScreen?
+    var screen: DetailViewControllerScreen?
     
     var cardModel: CardViewModel?
     
