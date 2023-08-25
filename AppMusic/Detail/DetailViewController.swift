@@ -15,15 +15,12 @@ enum StateAnimation{
 class DetailViewController: UIViewController {
     
     var screen: DetailScreen?
-    
     var cardModel: CardViewModel?
-    
-    var valueAnimation:StateAnimation = .long
+    var valueAnimation: StateAnimation = .long
     
     override func loadView() {
-        self.screen = DetailScreen(dataView: self.cardModel)
-        self.screen?.configAllDelegates(tableViewDelegate: self, tableViewDataSource: self, scrollViewDelegate: self, detailViewScreenDelegate: self)
-        self.view = self.screen
+        screen = DetailScreen(dataView: self.cardModel)
+        view = screen
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -32,11 +29,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        screen?.configAllDelegates(tableViewDelegate: self, tableViewDataSource: self, scrollViewDelegate: self, detailViewScreenDelegate: self)
     }
     
-    private func animationWithView(){
+    private func animationWithView() {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) {
             self.view.layoutIfNeeded()
         }
@@ -54,36 +50,32 @@ class DetailViewController: UIViewController {
         if scrollView.contentOffset.y >= 300 {
             self.screen?.navBarTopAchor?.constant = 0
             
-            if valueAnimation == .long{
+            if valueAnimation == .long {
                 self.animationWithView()
             }
             self.valueAnimation = .short
             
-        }else{
+        } else {
             self.screen?.navBarTopAchor?.constant = -((topPadding ?? 0.0) + 80)
             
-            if valueAnimation == .short{
+            if valueAnimation == .short {
                 self.animationWithView()
             }
             self.valueAnimation = .long
         }
     }
-    
 }
 
-
-extension DetailViewController:DetailScreenProtocol{
+extension DetailViewController: DetailScreenProtocol {
     func tappedCloseButton() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
-
-
-extension DetailViewController: UITableViewDelegate,UITableViewDataSource{
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cardModel?.cardList?.count ?? 0
+        return cardModel?.cardList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,10 +89,8 @@ extension DetailViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.screen?.playerView.setupView(data: self.cardModel?.cardList?[indexPath.row] ?? CardListModel())
-        self.screen?.playerViewBottomAchor?.constant = 0
-        self.animationWithView()
+        screen?.playerView.setupView(data: self.cardModel?.cardList?[indexPath.row] ?? CardListModel())
+        screen?.playerViewBottomAchor?.constant = 0
+        animationWithView()
     }
-    
-    
 }
