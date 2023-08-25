@@ -10,43 +10,43 @@ import UIKit
 class CustomNavBar: UIView {
     
     lazy var categoryTitle: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        l.textColor = .white
-        l.textAlignment = .center
-        return l
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
     }()
     
     lazy var cardTitle: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        l.textColor = .white
-        l.textAlignment = .center
-        return l
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        return label
     }()
     
     lazy var featureLabel: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.textAlignment = .center
-        return l
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
     }()
     
     lazy var cardImage: UIImageView = {
-        let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.contentMode = .scaleAspectFill
-        img.clipsToBounds = true
-        return img
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        return image
     }()
     
     lazy var overlayView: UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.backgroundColor = .black.withAlphaComponent(0.7)
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black.withAlphaComponent(0.7)
+        return view
     }()
 
     override init(frame: CGRect) {
@@ -60,11 +60,11 @@ class CustomNavBar: UIView {
     }
     
     private func setupViews(){
-        self.addSubview(self.cardImage)
-        self.addSubview(self.overlayView)
-        self.addSubview(self.categoryTitle)
-        self.addSubview(self.cardTitle)
-        self.addSubview(self.featureLabel)
+        addSubview(self.cardImage)
+        addSubview(self.overlayView)
+        addSubview(self.categoryTitle)
+        addSubview(self.cardTitle)
+        addSubview(self.featureLabel)
     }
     
     private func setupConstraints(){
@@ -72,25 +72,25 @@ class CustomNavBar: UIView {
         self.overlayView.pin(to: self)
         
         NSLayoutConstraint.activate([
-            self.categoryTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
-            self.categoryTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.categoryTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            categoryTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
+            categoryTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            categoryTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
-            self.cardTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
-            self.cardTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
-            self.cardTitle.topAnchor.constraint(equalTo: self.categoryTitle.bottomAnchor,constant: 5),
+            cardTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            cardTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
+            cardTitle.topAnchor.constraint(equalTo: self.categoryTitle.bottomAnchor,constant: 5),
             
-            self.featureLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
-            self.featureLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
-            self.featureLabel.topAnchor.constraint(equalTo: self.cardTitle.bottomAnchor,constant: 5)
+            featureLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            featureLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
+            featureLabel.topAnchor.constraint(equalTo: self.cardTitle.bottomAnchor,constant: 5)
         ])
     }
     
     public func setupView(data: CardViewModel){
-        self.cardTitle.text = data.cardTitle
-        self.categoryTitle.text = data.categoryName
-        self.cardImage.image = UIImage(named: data.cardImage ?? "")
-        self.featureLabel.attributedText = .featureText(data.likeCount ?? "", data.duration ?? "")
+        cardTitle.text = data.cardTitle
+        categoryTitle.text = data.categoryName
+        cardImage.image = UIImage(named: data.cardImage ?? "")
+        featureLabel.attributedText = .featureText(data.likeCount ?? "", data.duration ?? "")
     }
     
 }
