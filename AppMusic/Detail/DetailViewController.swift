@@ -14,14 +14,14 @@ enum StateAnimation{
 
 class DetailViewController: UIViewController {
     
-    var screen: DetailViewControllerScreen?
+    var screen: DetailScreen?
     
     var cardModel: CardViewModel?
     
     var valueAnimation:StateAnimation = .long
     
     override func loadView() {
-        self.screen = DetailViewControllerScreen(dataView: self.cardModel)
+        self.screen = DetailScreen(dataView: self.cardModel)
         self.screen?.configAllDelegates(tableViewDelegate: self, tableViewDataSource: self, scrollViewDelegate: self, detailViewScreenDelegate: self)
         self.view = self.screen
     }
@@ -72,7 +72,7 @@ class DetailViewController: UIViewController {
 }
 
 
-extension DetailViewController:DetailViewControllerScreenDelegate{
+extension DetailViewController:DetailScreenProtocol{
     func tappedCloseButton() {
         self.dismiss(animated: true, completion: nil)
     }
