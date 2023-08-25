@@ -2,14 +2,14 @@
 //  DetailTableViewCell.swift
 //  AppMusicBF
 //
-//  Created by Gabriel Mors  on 23/08/23.
+//  Created by Caio on 30/12/21.
 //
 
 import UIKit
 
 class DetailTableViewCell: UITableViewCell {
     
-    static let identifier: String = String(describing: DetailTableViewCell.self)
+    static public let identifier:String = "DetailTableViewCell"
     
     var screen:DetailTableViewCellScreen = DetailTableViewCellScreen()
 

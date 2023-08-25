@@ -1,201 +1,182 @@
 //
 //  CustomCardView.swift
-//  AppMusic
+//  AppMusicBF
 //
-//  Created by Gabriel Mors  on 22/08/23.
+//  Created by Caio on 06/10/21.
 //
 
 import UIKit
 
-enum ViewMode {
+enum ViewMode{
     case full
     case card
 }
 
 class CustomCardView: UIView {
     
-    //MARK: Propriedades
-    var containerTopConstraints: NSLayoutConstraint?
+    
+    //MARK: - PROPRIEDADES
+    
+
     var containerLeadingConstraints: NSLayoutConstraint?
+    var containerTopConstraints: NSLayoutConstraint?
     var containerTrailingConstraints: NSLayoutConstraint?
     var containerBottomConstraints: NSLayoutConstraint?
     var dataModel: CardViewModel?
     
-    //MARK: Elementos
+    //MARK: - ELEMENTOS
     
-    // View do Card
+    //view do card
     lazy var cardContainerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 30
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: -2)
-        view.layer.shadowRadius = 20
-        return view
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.layer.cornerRadius = 30
+        v.clipsToBounds = true
+        v.layer.shadowOpacity = 1
+        v.layer.shadowOffset = CGSize(width: 0, height: -2)
+        v.layer.shadowRadius = 20
+        return v
     }()
     
-    // Imagem sobre o card com um todo
+    //imagem sobre o card como um todo
+    
     lazy var cardImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "")
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .black
-        return image
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.contentMode = .scaleAspectFill
+        img.backgroundColor = .black
+        return img
     }()
     
-    // View que escurece a imagem do card
+    // view que escure a imagem do card
+    
     lazy var overlayView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black.withAlphaComponent(0.6)
-        return view
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        return v
     }()
     
-    // Borda que fica sob a imagem de perfil
+    //bordas que fica sob a imagem de perfil
+    
     lazy var profileBorderView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .clear
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.white.cgColor
-        view.layer.cornerRadius = 25
-        return view
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = .clear
+        v.layer.borderWidth = 1
+        v.layer.borderColor = UIColor.white.cgColor
+        v.layer.cornerRadius = 25
+        return v
     }()
     
+    //imagem do usuario
     lazy var cardProfilePicture: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "")
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .black
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 20
-        return image
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.contentMode = .scaleAspectFill
+        img.backgroundColor = .black
+        img.clipsToBounds = true
+        img.layer.cornerRadius = 20
+        return img
     }()
     
-    // Botão adicionar imagem do usuário (botão plus)
+    //botao de adicionar imagem do usuario(botao pluss)
+    
     lazy var addProfileImageButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setBackgroundImage(UIImage(named: "plus"), for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = UIColor.white
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(tappedAddButton), for: .touchUpInside)
-        return button
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .white
+        btn.setBackgroundImage(UIImage(named: "plus"), for: .normal)
+        btn.layer.cornerRadius = 10
+        return btn
     }()
     
-    @objc private func tappedAddButton() {
-        
-    }
-    
-    // Categoria da música
+    //categoria da musica
     lazy var cardCategoryTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        label.textColor = .white
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        l.textColor = .white
+        return l
     }()
     
-    // Data categoria
+    //data categoria
     lazy var cardCategoryDateLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 11, weight: .regular)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        l.textColor = .white
+        return l
     }()
     
-    // Titulo
-    lazy var cardTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 31, weight: .bold)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
+    //titulo
+    lazy var cardTitle: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 31, weight: .bold)
+        l.textColor = .white
+        l.textAlignment = .center
+        return l
     }()
     
-    // Gostei e tempo
+    //gostei e tempo
     lazy var likeAndTimeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 31, weight: .bold)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
     }()
     
-    // Descrição do titulo
+    //descricao do titulo
     lazy var descriptionTitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        l.textColor = .white
+        l.textAlignment = .center
+        l.numberOfLines = 0
+        return l
     }()
     
-    lazy var actionView: CardActionView = {
-        let view = CardActionView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    lazy var actionsView: CardActionView = {
+        let v = CardActionView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
     }()
     
-    init(mode: ViewMode) {
+    init(mode: ViewMode){
         let frame = CGRect.zero
         super.init(frame: frame)
-        addSubViews()
-        setupConstraints()
-        updateLayout(for: mode)
+        self.addSubViews()
+        self.setUpConstraints()
+        self.updateLayout(for: mode)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func addSubViews() {
-        addSubview(cardContainerView)
+    
+    private func addSubViews(){
+        self.addSubview(self.cardContainerView)
         
-        cardContainerView.addSubview(cardImage)
-        cardContainerView.addSubview(overlayView)
+        self.cardContainerView.addSubview(self.cardImage)
+        self.cardContainerView.addSubview(self.overlayView)
         
-        cardContainerView.addSubview(profileBorderView)
-        cardContainerView.addSubview(cardProfilePicture)
-        cardContainerView.addSubview(addProfileImageButton)
+        self.cardContainerView.addSubview(self.profileBorderView)
+        self.cardContainerView.addSubview(self.cardProfilePicture)
+        self.cardContainerView.addSubview(self.addProfileImageButton)
         
-        cardContainerView.addSubview(cardCategoryTitleLabel)
-        cardContainerView.addSubview(cardCategoryDateLabel)
-        cardContainerView.addSubview(cardTitleLabel)
-        cardContainerView.addSubview(likeAndTimeLabel)
-        cardContainerView.addSubview(descriptionTitleLabel)
-        cardContainerView.addSubview(actionView)
+        
+        self.cardContainerView.addSubview(self.cardCategoryTitleLabel)
+        self.cardContainerView.addSubview(self.cardCategoryDateLabel)
+        self.cardContainerView.addSubview(self.cardTitle)
+        self.cardContainerView.addSubview(self.likeAndTimeLabel)
+        self.cardContainerView.addSubview(self.descriptionTitleLabel)
+        self.cardContainerView.addSubview(self.actionsView)
+        
     }
     
-    private func updateLayout(for mode: ViewMode) {
-        if mode == .full {
-            self.containerTopConstraints?.constant = 0
-            self.containerLeadingConstraints?.constant = 0
-            self.containerTrailingConstraints?.constant = 0
-            self.containerBottomConstraints?.constant = 0
-            descriptionTitleLabel.isHidden = false
-        } else {
-            self.containerTopConstraints?.constant = 15
-            self.containerLeadingConstraints?.constant = 30
-            self.containerTrailingConstraints?.constant = -30
-            self.containerBottomConstraints?.constant = -15
-            descriptionTitleLabel.isHidden = true
-        }
-        actionView.updateLayout(for: mode)
-    }
-    
-    private func setupConstraints(){
+    private func setUpConstraints(){
         
         self.containerLeadingConstraints = cardContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
         self.containerLeadingConstraints?.isActive = true
@@ -241,12 +222,12 @@ class CustomCardView: UIView {
             self.cardCategoryDateLabel.centerXAnchor.constraint(equalTo: self.cardContainerView.centerXAnchor),
             
             
-            self.cardTitleLabel.topAnchor.constraint(equalTo: self.cardCategoryDateLabel.bottomAnchor, constant: 20),
-            self.cardTitleLabel.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor, constant: 20),
-            self.cardTitleLabel.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -20),
+            self.cardTitle.topAnchor.constraint(equalTo: self.cardCategoryDateLabel.bottomAnchor, constant: 20),
+            self.cardTitle.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor, constant: 20),
+            self.cardTitle.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -20),
             
             
-            self.likeAndTimeLabel.topAnchor.constraint(equalTo: self.cardTitleLabel.bottomAnchor, constant: 10),
+            self.likeAndTimeLabel.topAnchor.constraint(equalTo: self.cardTitle.bottomAnchor, constant: 10),
             self.likeAndTimeLabel.centerXAnchor.constraint(equalTo: self.cardContainerView.centerXAnchor),
             
             self.descriptionTitleLabel.topAnchor.constraint(equalTo: self.likeAndTimeLabel.bottomAnchor, constant: 30),
@@ -254,10 +235,10 @@ class CustomCardView: UIView {
             self.descriptionTitleLabel.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -40),
             
             
-            self.actionView.bottomAnchor.constraint(equalTo: self.cardContainerView.bottomAnchor,constant: -20),
-            self.actionView.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor,constant: 20),
-            self.actionView.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor,constant: -20),
-            self.actionView.heightAnchor.constraint(equalToConstant: 80)
+            self.actionsView.bottomAnchor.constraint(equalTo: self.cardContainerView.bottomAnchor,constant: -20),
+            self.actionsView.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor,constant: 20),
+            self.actionsView.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor,constant: -20),
+            self.actionsView.heightAnchor.constraint(equalToConstant: 80)
             
         ])
         
@@ -266,13 +247,37 @@ class CustomCardView: UIView {
         
     }
     
+    
+    private func updateLayout(for mode: ViewMode){
+        if mode == .full{
+            self.containerLeadingConstraints?.constant = 0
+            self.containerTopConstraints?.constant = 0
+            self.containerBottomConstraints?.constant = 0
+            self.containerTrailingConstraints?.constant = 0
+            self.descriptionTitleLabel.isHidden = false
+        }else{
+            self.containerLeadingConstraints?.constant = 30
+            self.containerTopConstraints?.constant = 15
+            self.containerBottomConstraints?.constant = -15
+            self.containerTrailingConstraints?.constant = -30
+            self.descriptionTitleLabel.isHidden = true
+        }
+        self.actionsView.updateLayout(for: mode)
+    }
+    
+    
+    
+    
     public func setupView(data: CardViewModel){
         self.cardCategoryTitleLabel.text = data.categoryName
         self.cardCategoryDateLabel.text = data.categoryDate
-        self.cardTitleLabel.text = data.cardTitle
+        self.cardTitle.text = data.cardTitle
         self.likeAndTimeLabel.attributedText = NSAttributedString.featureText(data.likeCount ?? "", data.duration ?? "")
         self.descriptionTitleLabel.text = data.cardDescription
         self.cardImage.image = UIImage(named: data.cardImage ?? "")
         self.cardProfilePicture.image = UIImage(named: data.categoryImage ?? "")
     }
+    
+
+    
 }

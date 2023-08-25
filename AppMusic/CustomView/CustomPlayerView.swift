@@ -2,7 +2,6 @@
 //  CustomPlayerView.swift
 //  AppMusicBF
 //
-//  Created by Gabriel Mors  on 23/08/23.
 //
 
 import UIKit
@@ -11,7 +10,7 @@ import MarqueeLabel
 class CustomPlayerView: UIView {
     
     var videoTimer: Timer?
-    var time: CGFloat = 0.0
+    var time:CGFloat = 0.0
     
     lazy var imageView: UIImageView = {
         let img = UIImageView()
@@ -21,32 +20,32 @@ class CustomPlayerView: UIView {
     }()
     
     lazy var marqueeLabel: MarqueeLabel = {
-       let label = MarqueeLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Avenir-Heavy", size: 18)
-        label.textColor = .white.withAlphaComponent(0.8)
-        label.type = .continuous
-        label.animationCurve = .linear
-        label.fadeLength = 10.0
-        label.leadingBuffer = 30.0
-        label.trailingBuffer = 30.0
-        return label
+       let l = MarqueeLabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont(name: "Avenir-Heavy", size: 18)
+        l.textColor = .white.withAlphaComponent(0.8)
+        l.type = .continuous
+        l.animationCurve = .linear
+        l.fadeLength = 10.0
+        l.leadingBuffer = 30.0
+        l.trailingBuffer = 30.0
+        return l
     }()
     
     lazy var pausePlayBtn: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "pause")?.withRenderingMode(.alwaysTemplate)
-        image.tintColor = .white.withAlphaComponent(0.8)
-        return image
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "pause")?.withRenderingMode(.alwaysTemplate)
+        img.tintColor = .white.withAlphaComponent(0.8)
+        return img
     }()
     
     lazy var trackBar: UIProgressView = {
-        let view = UIProgressView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.progressTintColor = .yellow.withAlphaComponent(0.8)
-        view.progress = 0.0
-        return view
+        let v = UIProgressView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.progressTintColor = .yellow.withAlphaComponent(0.8)
+        v.progress = 0.0
+        return v
     }()
     
     
@@ -62,16 +61,18 @@ class CustomPlayerView: UIView {
     }
     
     
-    private func setupViews() {
+    private func setupViews(){
         self.addSubview(self.imageView)
         self.addSubview(self.marqueeLabel)
         self.addSubview(self.pausePlayBtn)
         self.addSubview(self.trackBar)
         
         self.videoTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.changeTrackBar), userInfo: nil, repeats: true)
+        
+        
     }
     
-    private func setupContraints() {
+    private func setupContraints(){
         NSLayoutConstraint.activate([
             self.imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.imageView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -94,7 +95,7 @@ class CustomPlayerView: UIView {
     }
     
     
-    @objc func changeTrackBar() {
+    @objc func changeTrackBar(){
         self.time += 0.001
         self.trackBar.progress = Float(self.time / 120)
         if self.time >= 120{
@@ -103,7 +104,7 @@ class CustomPlayerView: UIView {
         }
     }
     
-    public func setupView(data:CardListModel) {
+    public func setupView(data:CardListModel){
         self.imageView.image = UIImage(named: data.listImage ?? "")
         self.marqueeLabel.text = data.listTitle
         self.time = 0.0

@@ -1,8 +1,8 @@
 //
 //  DetailViewController.swift
-//  AppMusic
+//  AppMusicBF
 //
-//  Created by Gabriel Mors  on 23/08/23.
+//  Created by Caio on 23/12/21.
 //
 
 import UIKit
@@ -14,15 +14,16 @@ enum StateAnimation{
 
 class DetailViewController: UIViewController {
     
-    var screen: DetailScreen?
+    var screen:DetailViewControllerScreen?
     
     var cardModel: CardViewModel?
     
     var valueAnimation:StateAnimation = .long
     
     override func loadView() {
-        screen = DetailScreen(dataView: self.cardModel)
-        view = self.screen
+        self.screen = DetailViewControllerScreen(dataView: self.cardModel)
+        self.screen?.configAllDelegates(tableViewDelegate: self, tableViewDataSource: self, scrollViewDelegate: self, detailViewScreenDelegate: self)
+        self.view = self.screen
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -31,7 +32,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen?.configAllDelegate(tableViewDelegate: self, tableviewDataSource: self, scrollViewDelegate: self, detailScreenProtocol: self)
+
+        // Do any additional setup after loading the view.
     }
     
     private func animationWithView(){
@@ -50,7 +52,7 @@ class DetailViewController: UIViewController {
         print(scrollView.contentOffset.y)
         
         if scrollView.contentOffset.y >= 300 {
-            self.screen?.navBarTopAnchor?.constant = 0
+            self.screen?.navBarTopAchor?.constant = 0
             
             if valueAnimation == .long{
                 self.animationWithView()
@@ -58,7 +60,7 @@ class DetailViewController: UIViewController {
             self.valueAnimation = .short
             
         }else{
-            self.screen?.navBarTopAnchor?.constant = -((topPadding ?? 0.0) + 80)
+            self.screen?.navBarTopAchor?.constant = -((topPadding ?? 0.0) + 80)
             
             if valueAnimation == .short{
                 self.animationWithView()
@@ -70,7 +72,7 @@ class DetailViewController: UIViewController {
 }
 
 
-extension DetailViewController: DetailScreenProtocol{
+extension DetailViewController:DetailViewControllerScreenDelegate{
     func tappedCloseButton() {
         self.dismiss(animated: true, completion: nil)
     }

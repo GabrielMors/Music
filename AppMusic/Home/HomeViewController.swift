@@ -1,28 +1,34 @@
 //
 //  ViewController.swift
-//  AppMusic
+//  AppMusicBF
 //
-//  Created by Gabriel Mors  on 21/08/23.
+//  Created by Caio on 06/10/21.
 //
 
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    var screen: HomeScreen?
+    
+    
+    var screen:HomeViewControllerScreen?
     
     override func loadView() {
-        screen = HomeScreen()
-        view = screen
+        self.screen = HomeViewControllerScreen()
+        self.screen?.configTableViewProtocols(delegate: self, dataSource: self)
+        self.view = self.screen
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen?.configTableViewDelegate(delegate: self, dataSource: self)
+    
     }
+
+
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CardData.count
@@ -35,13 +41,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = DetailViewController()
-        viewController.cardModel = CardData[indexPath.row]
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: true)
+        let VC = DetailViewController()
+        VC.cardModel = CardData[indexPath.row]
+        VC.modalPresentationStyle = .fullScreen
+        present(VC, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
     }
+    
+    
+    
+    
 }
+

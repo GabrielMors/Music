@@ -2,7 +2,7 @@
 //  DetailTableViewCellScreen.swift
 //  AppMusicBF
 //
-//  Created by Gabriel Mors  on 23/08/23.
+//  Created by Caio on 30/12/21.
 //
 
 import UIKit
@@ -10,33 +10,33 @@ import UIKit
 class DetailTableViewCellScreen: UIView {
 
     lazy var thumbImage: UIImageView = {
-        var image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "demo")
-        image.layer.cornerRadius = 5
-        image.clipsToBounds = true
-        return image
+        var img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage(named: "demo")
+        img.layer.cornerRadius = 5
+        img.clipsToBounds = true
+        return img
     }()
     
     lazy var title: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Teste Nome"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        label.textColor = .black
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "Teste Nome"
+        l.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        l.textColor = .black
+        return l
     }()
     
     lazy var subTitle: UILabel = {
-        var label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sub Titulo"
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = .lightGray
-        return label
+        var l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "Sub Titulo"
+        l.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        l.textColor = .lightGray
+        return l
     }()
     
-    lazy var likeButton: UIButton = {
+    lazy var likeBtn: UIButton = {
         var btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(named: "love")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -44,7 +44,7 @@ class DetailTableViewCellScreen: UIView {
         return btn
     }()
     
-    lazy var moreButton: UIButton = {
+    lazy var moreBtn: UIButton = {
         var btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setBackgroundImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -66,8 +66,8 @@ class DetailTableViewCellScreen: UIView {
         self.addSubview(self.thumbImage)
         self.addSubview(self.title)
         self.addSubview(self.subTitle)
-        self.addSubview(self.likeButton)
-        self.addSubview(self.moreButton)
+        self.addSubview(self.likeBtn)
+        self.addSubview(self.moreBtn)
     }
     
     
@@ -85,15 +85,15 @@ class DetailTableViewCellScreen: UIView {
             self.subTitle.leadingAnchor.constraint(equalTo: self.thumbImage.trailingAnchor,constant: 15),
             self.subTitle.topAnchor.constraint(equalTo: self.title.bottomAnchor,constant: 4),
             
-            self.moreButton.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15),
-            self.moreButton.widthAnchor.constraint(equalToConstant: 35),
-            self.moreButton.heightAnchor.constraint(equalToConstant: 35),
-            self.moreButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.moreBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15),
+            self.moreBtn.widthAnchor.constraint(equalToConstant: 35),
+            self.moreBtn.heightAnchor.constraint(equalToConstant: 35),
+            self.moreBtn.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
-            self.likeButton.trailingAnchor.constraint(equalTo: self.moreButton.leadingAnchor,constant: -15),
-            self.likeButton.widthAnchor.constraint(equalToConstant: 35),
-            self.likeButton.heightAnchor.constraint(equalToConstant: 35),
-            self.likeButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            self.likeBtn.trailingAnchor.constraint(equalTo: self.moreBtn.leadingAnchor,constant: -15),
+            self.likeBtn.widthAnchor.constraint(equalToConstant: 35),
+            self.likeBtn.heightAnchor.constraint(equalToConstant: 35),
+            self.likeBtn.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     

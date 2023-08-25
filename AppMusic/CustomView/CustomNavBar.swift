@@ -2,7 +2,7 @@
 //  CustomNavBar.swift
 //  AppMusicBF
 //
-//  Created by Gabriel Mors  on 23/08/23.
+//  Created by Caio on 08/01/22.
 //
 
 import UIKit
@@ -10,43 +10,43 @@ import UIKit
 class CustomNavBar: UIView {
     
     lazy var categoryTitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        l.textColor = .white
+        l.textAlignment = .center
+        return l
     }()
     
     lazy var cardTitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        l.textColor = .white
+        l.textAlignment = .center
+        return l
     }()
     
     lazy var featureLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        return label
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.textAlignment = .center
+        return l
     }()
     
     lazy var cardImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        return image
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.contentMode = .scaleAspectFill
+        img.clipsToBounds = true
+        return img
     }()
     
     lazy var overlayView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black.withAlphaComponent(0.7)
-        return view
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = .black.withAlphaComponent(0.7)
+        return v
     }()
 
     override init(frame: CGRect) {
