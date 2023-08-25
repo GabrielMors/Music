@@ -17,37 +17,37 @@ class CardActionView: UIView {
         return stack
     }()
     
-    lazy var downloadView:UIView = {
+    lazy var downloadView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var notInterestedView:UIView = {
+    lazy var notInterestedView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var playView:UIView = {
+    lazy var playView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var likeView:UIView = {
+    lazy var likeView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var moreView:UIView = {
+    lazy var moreView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var downloadButton:UIButton = {
+    lazy var downloadButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white.withAlphaComponent(0.3)
@@ -58,7 +58,7 @@ class CardActionView: UIView {
         return button
     }()
     
-    lazy var notInterestedButton:UIButton = {
+    lazy var notInterestedButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white.withAlphaComponent(0.3)
@@ -69,7 +69,7 @@ class CardActionView: UIView {
         return button
     }()
     
-    lazy var playButton:UIButton = {
+    lazy var playButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
@@ -80,7 +80,7 @@ class CardActionView: UIView {
         return button
     }()
     
-    lazy var likeButton:UIButton = {
+    lazy var likeButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white.withAlphaComponent(0.3)
@@ -91,7 +91,7 @@ class CardActionView: UIView {
         return button
     }()
     
-    lazy var moreButton:UIButton = {
+    lazy var moreButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white.withAlphaComponent(0.3)
@@ -114,7 +114,7 @@ class CardActionView: UIView {
     }
     
     
-    private func setupViews(){
+    private func setupViews() {
         addSubview(self.stackView)
         
         stackView.addArrangedSubview(self.notInterestedView)
@@ -128,7 +128,7 @@ class CardActionView: UIView {
         moreView.addSubview(self.moreButton)
     }
     
-    private func setupContraints(){
+    private func setupContraints() {
         
         self.stackView.pin(to: self)
         
@@ -161,7 +161,7 @@ class CardActionView: UIView {
         ])
     }
     
-    public func updateLayout(for mode: ViewMode){
+    public func updateLayout(for mode: ViewMode) {
         if mode == .full{
             downloadView.isHidden = false
             moreView.isHidden = false
