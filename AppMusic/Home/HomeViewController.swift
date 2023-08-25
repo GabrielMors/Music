@@ -20,8 +20,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         screen?.configTableViewDelegate(delegate: self, dataSource: self)
     }
-
-
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
