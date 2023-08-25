@@ -10,103 +10,103 @@ import UIKit
 class CardActionView: UIView {
     
     lazy var stackView: UIStackView = {
-        let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.axis = .horizontal
-        sv.distribution = .fillEqually
-        return sv
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        return stack
     }()
     
     lazy var downloadView:UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var notInterestedView:UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var playView:UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var likeView:UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var moreView:UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        return v
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    lazy var downloadBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white.withAlphaComponent(0.3)
-        btn.layer.cornerRadius = 22.5
-        btn.setBackgroundImage(UIImage(named: "download")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.tintColor = .white
-        btn.clipsToBounds = true
-        return btn
+    lazy var downloadButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.layer.cornerRadius = 22.5
+        button.setBackgroundImage(UIImage(named: "download")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.clipsToBounds = true
+        return button
     }()
     
-    lazy var notInterestedBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white.withAlphaComponent(0.3)
-        btn.layer.cornerRadius = 22.5
-        btn.setBackgroundImage(UIImage(named: "restrict")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.tintColor = .white
-        btn.clipsToBounds = true
-        return btn
+    lazy var notInterestedButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.layer.cornerRadius = 22.5
+        button.setBackgroundImage(UIImage(named: "restrict")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.clipsToBounds = true
+        return button
     }()
     
-    lazy var playBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white
-        btn.layer.cornerRadius = 35
-        btn.setBackgroundImage(UIImage(named: "playBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.tintColor = .black
-        btn.clipsToBounds = true
-        return btn
+    lazy var playButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 35
+        button.setBackgroundImage(UIImage(named: "playBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .black
+        button.clipsToBounds = true
+        return button
     }()
     
-    lazy var likeBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white.withAlphaComponent(0.3)
-        btn.layer.cornerRadius = 22.5
-        btn.setBackgroundImage(UIImage(named: "like")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.tintColor = .white
-        btn.clipsToBounds = true
-        return btn
+    lazy var likeButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.layer.cornerRadius = 22.5
+        button.setBackgroundImage(UIImage(named: "like")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.clipsToBounds = true
+        return button
     }()
     
-    lazy var moreBtn:UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white.withAlphaComponent(0.3)
-        btn.layer.cornerRadius = 22.5
-        btn.setBackgroundImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.tintColor = .white
-        btn.clipsToBounds = true
-        return btn
+    lazy var moreButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white.withAlphaComponent(0.3)
+        button.layer.cornerRadius = 22.5
+        button.setBackgroundImage(UIImage(named: "more")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+        button.clipsToBounds = true
+        return button
     }()
-
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupViews()
-        self.setupContraints()
+        setupViews()
+        setupContraints()
     }
     
     required init?(coder: NSCoder) {
@@ -115,69 +115,67 @@ class CardActionView: UIView {
     
     
     private func setupViews(){
-        self.addSubview(self.stackView)
-        self.stackView.addArrangedSubview(self.notInterestedView)
-        self.stackView.addArrangedSubview(self.playView)
-        self.stackView.addArrangedSubview(self.likeView)
+        addSubview(self.stackView)
         
-        self.downloadView.addSubview(self.downloadBtn)
-        self.notInterestedView.addSubview(self.notInterestedBtn)
-        self.playView.addSubview(self.playBtn)
-        self.likeView.addSubview(self.likeBtn)
-        self.moreView.addSubview(self.moreBtn)
+        stackView.addArrangedSubview(self.notInterestedView)
+        stackView.addArrangedSubview(self.playView)
+        stackView.addArrangedSubview(self.likeView)
+        
+        downloadView.addSubview(self.downloadButton)
+        notInterestedView.addSubview(self.notInterestedButton)
+        playView.addSubview(self.playButton)
+        likeView.addSubview(self.likeButton)
+        moreView.addSubview(self.moreButton)
     }
-    
     
     private func setupContraints(){
         
         self.stackView.pin(to: self)
         
         NSLayoutConstraint.activate([
-        
-            self.downloadBtn.centerXAnchor.constraint(equalTo: self.downloadView.centerXAnchor),
-            self.downloadBtn.centerYAnchor.constraint(equalTo: self.downloadView.centerYAnchor),
-            self.downloadBtn.widthAnchor.constraint(equalToConstant: 45),
-            self.downloadBtn.heightAnchor.constraint(equalToConstant: 45),
             
-            self.notInterestedBtn.centerXAnchor.constraint(equalTo: self.notInterestedView.centerXAnchor),
-            self.notInterestedBtn.centerYAnchor.constraint(equalTo: self.notInterestedView.centerYAnchor),
-            self.notInterestedBtn.widthAnchor.constraint(equalToConstant: 45),
-            self.notInterestedBtn.heightAnchor.constraint(equalToConstant: 45),
+            downloadButton.centerXAnchor.constraint(equalTo: self.downloadView.centerXAnchor),
+            downloadButton.centerYAnchor.constraint(equalTo: self.downloadView.centerYAnchor),
+            downloadButton.widthAnchor.constraint(equalToConstant: 45),
+            downloadButton.heightAnchor.constraint(equalToConstant: 45),
             
-            self.playBtn.centerXAnchor.constraint(equalTo: self.playView.centerXAnchor),
-            self.playBtn.centerYAnchor.constraint(equalTo: self.playView.centerYAnchor),
-            self.playBtn.widthAnchor.constraint(equalToConstant: 70),
-            self.playBtn.heightAnchor.constraint(equalToConstant: 70),
+            notInterestedButton.centerXAnchor.constraint(equalTo: self.notInterestedView.centerXAnchor),
+            notInterestedButton.centerYAnchor.constraint(equalTo: self.notInterestedView.centerYAnchor),
+            notInterestedButton.widthAnchor.constraint(equalToConstant: 45),
+            notInterestedButton.heightAnchor.constraint(equalToConstant: 45),
             
-            self.likeBtn.centerXAnchor.constraint(equalTo: self.likeView.centerXAnchor),
-            self.likeBtn.centerYAnchor.constraint(equalTo: self.likeView.centerYAnchor),
-            self.likeBtn.widthAnchor.constraint(equalToConstant: 45),
-            self.likeBtn.heightAnchor.constraint(equalToConstant: 45),
+            playButton.centerXAnchor.constraint(equalTo: self.playView.centerXAnchor),
+            playButton.centerYAnchor.constraint(equalTo: self.playView.centerYAnchor),
+            playButton.widthAnchor.constraint(equalToConstant: 70),
+            playButton.heightAnchor.constraint(equalToConstant: 70),
             
-            self.moreBtn.centerXAnchor.constraint(equalTo: self.moreView.centerXAnchor),
-            self.moreBtn.centerYAnchor.constraint(equalTo: self.moreView.centerYAnchor),
-            self.moreBtn.widthAnchor.constraint(equalToConstant: 45),
-            self.moreBtn.heightAnchor.constraint(equalToConstant: 45),
+            likeButton.centerXAnchor.constraint(equalTo: self.likeView.centerXAnchor),
+            likeButton.centerYAnchor.constraint(equalTo: self.likeView.centerYAnchor),
+            likeButton.widthAnchor.constraint(equalToConstant: 45),
+            likeButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            moreButton.centerXAnchor.constraint(equalTo: self.moreView.centerXAnchor),
+            moreButton.centerYAnchor.constraint(equalTo: self.moreView.centerYAnchor),
+            moreButton.widthAnchor.constraint(equalToConstant: 45),
+            moreButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
     public func updateLayout(for mode: ViewMode){
         if mode == .full{
-            self.downloadView.isHidden = false
-            self.moreView.isHidden = false
-            self.stackView.addArrangedSubview(self.downloadView)
-            self.stackView.addArrangedSubview(self.notInterestedView)
-            self.stackView.addArrangedSubview(self.playView)
-            self.stackView.addArrangedSubview(self.likeView)
-            self.stackView.addArrangedSubview(self.moreView)
-        }else{
-            self.downloadView.isHidden = true
-            self.moreView.isHidden = true
-            self.stackView.removeArrangedSubview(self.downloadView)
-            self.stackView.removeArrangedSubview(self.moreView)
+            downloadView.isHidden = false
+            moreView.isHidden = false
+            
+            stackView.addArrangedSubview(self.downloadView)
+            stackView.addArrangedSubview(self.notInterestedView)
+            stackView.addArrangedSubview(self.playView)
+            stackView.addArrangedSubview(self.likeView)
+            stackView.addArrangedSubview(self.moreView)
+        } else {
+            downloadView.isHidden = true
+            moreView.isHidden = true
+            stackView.removeArrangedSubview(self.downloadView)
+            stackView.removeArrangedSubview(self.moreView)
         }
-        
     }
-    
-
 }
