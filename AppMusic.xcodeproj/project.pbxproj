@@ -23,9 +23,9 @@
 		C4EF39712A98D04100B3203F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF395E2A98D04100B3203F /* DetailTableViewCell.swift */; };
 		C4EF39722A98D04100B3203F /* DetailTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39602A98D04100B3203F /* DetailTableViewCellScreen.swift */; };
 		C4EF39732A98D04100B3203F /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39622A98D04100B3203F /* DetailScreen.swift */; };
-		C4EF39742A98D04100B3203F /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39642A98D04100B3203F /* NSAttributedString + Extension.swift */; };
-		C4EF39752A98D04100B3203F /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39652A98D04100B3203F /* UIView + Extension.swift */; };
-		C4EF39762A98D04100B3203F /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39662A98D04100B3203F /* NSTextAttachment + Extension.swift */; };
+		C4EF39742A98D04100B3203F /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39642A98D04100B3203F /* NSAttributedString+Extension.swift */; };
+		C4EF39752A98D04100B3203F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39652A98D04100B3203F /* UIView+Extension.swift */; };
+		C4EF39762A98D04100B3203F /* NSTextAttachment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39662A98D04100B3203F /* NSTextAttachment+Extension.swift */; };
 		C4EF39772A98D04100B3203F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39682A98D04100B3203F /* CardViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +50,9 @@
 		C4EF395E2A98D04100B3203F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		C4EF39602A98D04100B3203F /* DetailTableViewCellScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCellScreen.swift; sourceTree = "<group>"; };
 		C4EF39622A98D04100B3203F /* DetailScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
-		C4EF39642A98D04100B3203F /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
-		C4EF39652A98D04100B3203F /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
-		C4EF39662A98D04100B3203F /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
+		C4EF39642A98D04100B3203F /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		C4EF39652A98D04100B3203F /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C4EF39662A98D04100B3203F /* NSTextAttachment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment+Extension.swift"; sourceTree = "<group>"; };
 		C4EF39682A98D04100B3203F /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,8 +179,8 @@
 		C4EF395D2A98D04100B3203F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C4EF395E2A98D04100B3203F /* DetailTableViewCell.swift */,
 				C4EF395F2A98D04100B3203F /* Screen */,
+				C4EF395E2A98D04100B3203F /* DetailTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -204,9 +204,9 @@
 		C4EF39632A98D04100B3203F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C4EF39642A98D04100B3203F /* NSAttributedString + Extension.swift */,
-				C4EF39652A98D04100B3203F /* UIView + Extension.swift */,
-				C4EF39662A98D04100B3203F /* NSTextAttachment + Extension.swift */,
+				C4EF39642A98D04100B3203F /* NSAttributedString+Extension.swift */,
+				C4EF39652A98D04100B3203F /* UIView+Extension.swift */,
+				C4EF39662A98D04100B3203F /* NSTextAttachment+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -338,12 +338,12 @@
 				C46BE9F22A9B973F0060BDF7 /* CardViewTableViewCell.swift in Sources */,
 				C4EF396D2A98D04100B3203F /* CustomPlayerView.swift in Sources */,
 				C4EF39772A98D04100B3203F /* CardViewModel.swift in Sources */,
-				C4EF39762A98D04100B3203F /* NSTextAttachment + Extension.swift in Sources */,
+				C4EF39762A98D04100B3203F /* NSTextAttachment+Extension.swift in Sources */,
 				C4EF396F2A98D04100B3203F /* HomeViewControllerScreen.swift in Sources */,
-				C4EF39742A98D04100B3203F /* NSAttributedString + Extension.swift in Sources */,
+				C4EF39742A98D04100B3203F /* NSAttributedString+Extension.swift in Sources */,
 				C4EF396E2A98D04100B3203F /* HomeViewController.swift in Sources */,
 				C4EF396C2A98D04100B3203F /* CardActionView.swift in Sources */,
-				C4EF39752A98D04100B3203F /* UIView + Extension.swift in Sources */,
+				C4EF39752A98D04100B3203F /* UIView+Extension.swift in Sources */,
 				C4EF396B2A98D04100B3203F /* CustomCardView.swift in Sources */,
 				C4EF39702A98D04100B3203F /* DetailViewController.swift in Sources */,
 				C4EF39722A98D04100B3203F /* DetailTableViewCellScreen.swift in Sources */,

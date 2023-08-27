@@ -1,5 +1,5 @@
 //
-//  NSAttributedString + Extension.swift
+//  NSAttributedString+Extension.swift
 //  AppMusicBF
 //
 //  Created by Gabriel Mors on 22/08/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension  NSAttributedString{
+extension  NSAttributedString {
     
    public static func featureText(_ likeCount: String , _ duration: String) -> NSAttributedString {
         let attributedText = NSMutableAttributedString(string:"")

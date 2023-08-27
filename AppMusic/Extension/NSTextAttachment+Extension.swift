@@ -1,5 +1,5 @@
 //
-//  NSTextAttachment + Extension.swift
+//  NSTextAttachment+Extension.swift
 //  AppMusicBF
 //
 //  Created by Gabriel Mors on 22/08/23.

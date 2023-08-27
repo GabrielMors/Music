@@ -72,17 +72,17 @@ class CustomNavBar: UIView {
         self.overlayView.pin(to: self)
         
         NSLayoutConstraint.activate([
-            categoryTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
-            categoryTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            categoryTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            categoryTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            categoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            categoryTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            cardTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
-            cardTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
-            cardTitle.topAnchor.constraint(equalTo: self.categoryTitle.bottomAnchor,constant: 5),
+            cardTitle.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            cardTitle.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            cardTitle.topAnchor.constraint(equalTo: categoryTitle.bottomAnchor,constant: 5),
             
-            featureLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
-            featureLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20),
-            featureLabel.topAnchor.constraint(equalTo: self.cardTitle.bottomAnchor,constant: 5)
+            featureLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            featureLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            featureLabel.topAnchor.constraint(equalTo: cardTitle.bottomAnchor,constant: 5)
         ])
     }
     
@@ -92,5 +92,4 @@ class CustomNavBar: UIView {
         cardImage.image = UIImage(named: data.cardImage ?? "")
         featureLabel.attributedText = .featureText(data.likeCount ?? "", data.duration ?? "")
     }
-    
 }
