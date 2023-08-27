@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		326472549C094572E55466F1 /* Pods_AppMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666587937120A1B98F4758F5 /* Pods_AppMusic.framework */; };
+		C46BE9F22A9B973F0060BDF7 /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46BE9F12A9B973F0060BDF7 /* CardViewTableViewCell.swift */; };
 		C4D8A6472A944D1800B71F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6462A944D1800B71F22 /* AppDelegate.swift */; };
 		C4D8A6492A944D1800B71F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8A6482A944D1800B71F22 /* SceneDelegate.swift */; };
 		C4D8A6502A944D1900B71F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A64F2A944D1900B71F22 /* Assets.xcassets */; };
 		C4D8A6532A944D1900B71F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D8A6512A944D1900B71F22 /* LaunchScreen.storyboard */; };
-		C4EF39692A98D04100B3203F /* CardViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39512A98D04000B3203F /* CardViewTableViewCell.swift */; };
 		C4EF396A2A98D04100B3203F /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39532A98D04000B3203F /* CustomNavBar.swift */; };
 		C4EF396B2A98D04100B3203F /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39542A98D04000B3203F /* CustomCardView.swift */; };
 		C4EF396C2A98D04100B3203F /* CardActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EF39552A98D04000B3203F /* CardActionView.swift */; };
@@ -33,13 +33,13 @@
 		666587937120A1B98F4758F5 /* Pods_AppMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD696F05D68B76C0790C659D /* Pods-AppMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppMusic/Pods-AppMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		AD6A71F4012319E8CCD4AA73 /* Pods-AppMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMusic.release.xcconfig"; path = "Target Support Files/Pods-AppMusic/Pods-AppMusic.release.xcconfig"; sourceTree = "<group>"; };
+		C46BE9F12A9B973F0060BDF7 /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
 		C4D8A6432A944D1800B71F22 /* AppMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D8A6462A944D1800B71F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4D8A6482A944D1800B71F22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C4D8A64F2A944D1900B71F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4D8A6522A944D1900B71F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4D8A6542A944D1900B71F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4EF39512A98D04000B3203F /* CardViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewTableViewCell.swift; sourceTree = "<group>"; };
 		C4EF39532A98D04000B3203F /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		C4EF39542A98D04000B3203F /* CustomCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
 		C4EF39552A98D04000B3203F /* CardActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardActionView.swift; sourceTree = "<group>"; };
@@ -85,6 +85,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C46BE9F02A9B973F0060BDF7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C46BE9F12A9B973F0060BDF7 /* CardViewTableViewCell.swift */,
+			);
+			name = Cell;
+			path = "../../../Downloads/ProjetoFinal-2/AppMusicBF/Cell";
+			sourceTree = "<group>";
+		};
 		C4D8A63A2A944D1700B71F22 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +118,7 @@
 				C4EF39632A98D04100B3203F /* Extension */,
 				C4EF39672A98D04100B3203F /* Model */,
 				C4EF39522A98D04000B3203F /* CustomView */,
-				C4EF39502A98D04000B3203F /* Cell */,
+				C46BE9F02A9B973F0060BDF7 /* Cell */,
 				C4EF39572A98D04000B3203F /* Home */,
 				C4EF395B2A98D04100B3203F /* Detail */,
 				C4D8A65A2A944E4F00B71F22 /* Resource */,
@@ -127,15 +136,6 @@
 				C4D8A6512A944D1900B71F22 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		C4EF39502A98D04000B3203F /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C4EF39512A98D04000B3203F /* CardViewTableViewCell.swift */,
-			);
-			name = Cell;
-			path = ../../../Desktop/Music/Music/Cell;
 			sourceTree = "<group>";
 		};
 		C4EF39522A98D04000B3203F /* CustomView */ = {
@@ -334,8 +334,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4EF39732A98D04100B3203F /* DetailScreen.swift in Sources */,
-				C4EF39692A98D04100B3203F /* CardViewTableViewCell.swift in Sources */,
 				C4D8A6472A944D1800B71F22 /* AppDelegate.swift in Sources */,
+				C46BE9F22A9B973F0060BDF7 /* CardViewTableViewCell.swift in Sources */,
 				C4EF396D2A98D04100B3203F /* CustomPlayerView.swift in Sources */,
 				C4EF39772A98D04100B3203F /* CardViewModel.swift in Sources */,
 				C4EF39762A98D04100B3203F /* NSTextAttachment + Extension.swift in Sources */,

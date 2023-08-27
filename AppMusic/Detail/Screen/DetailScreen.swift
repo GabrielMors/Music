@@ -2,7 +2,7 @@
 //  DetailViewControllerScreen.swift
 //  AppMusicBF
 //
-//  Created by Caio on 23/12/21.
+//  Created by Gabriel Mors on 24/08/23.
 //
 
 import UIKit

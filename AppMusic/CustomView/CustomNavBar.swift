@@ -2,7 +2,7 @@
 //  CustomNavBar.swift
 //  AppMusicBF
 //
-//  Created by Caio on 08/01/22.
+//  Created by Gabriel Mors on 22/08/23.
 //
 
 import UIKit
