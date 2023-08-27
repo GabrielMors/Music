@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol CardActionViewProtocol: AnyObject {
+    func tappedPlayButton()
+    func tappedLikeButton()
+}
+
 class CardActionView: UIView {
+    
+    private weak var delegate: CardActionViewProtocol?
+    
+    public func setDelegate(delegate: CardActionViewProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var stackView: UIStackView = {
         let stack = UIStackView()
@@ -77,8 +88,13 @@ class CardActionView: UIView {
         button.setBackgroundImage(UIImage(named: "playBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .black
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(tappedPlayButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func tappedPlayButton() {
+        self.delegate?.tappedLikeButton()
+    }
     
     lazy var likeButton: UIButton = {
         let button = UIButton()
@@ -88,8 +104,13 @@ class CardActionView: UIView {
         button.setBackgroundImage(UIImage(named: "like")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(tappedLikeButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func tappedLikeButton() {
+        self.delegate?.tappedPlayButton()
+    }
     
     lazy var moreButton: UIButton = {
         let button = UIButton()
@@ -101,7 +122,6 @@ class CardActionView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

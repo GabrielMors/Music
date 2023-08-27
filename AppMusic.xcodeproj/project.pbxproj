@@ -141,9 +141,9 @@
 		C4EF39522A98D04000B3203F /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				C4EF39532A98D04000B3203F /* CustomNavBar.swift */,
-				C4EF39542A98D04000B3203F /* CustomCardView.swift */,
 				C4EF39552A98D04000B3203F /* CardActionView.swift */,
+				C4EF39542A98D04000B3203F /* CustomCardView.swift */,
+				C4EF39532A98D04000B3203F /* CustomNavBar.swift */,
 				C4EF39562A98D04000B3203F /* CustomPlayerView.swift */,
 			);
 			path = CustomView;

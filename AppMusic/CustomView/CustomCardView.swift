@@ -37,7 +37,6 @@ class CustomCardView: UIView {
     }()
     
     //imagem sobre o card como um todo
-    
     lazy var cardImage: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +46,6 @@ class CustomCardView: UIView {
     }()
     
     // view que escure a imagem do card
-    
     lazy var overlayView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +54,6 @@ class CustomCardView: UIView {
     }()
     
     //bordas que fica sob a imagem de perfil
-    
     lazy var profileBorderView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +76,6 @@ class CustomCardView: UIView {
     }()
     
     //botao de adicionar imagem do usuario(botao pluss)
-    
     lazy var addProfileImageButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false

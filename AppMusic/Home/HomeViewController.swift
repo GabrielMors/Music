@@ -8,8 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    var screen:HomeViewControllerScreen?
+
+    var screen: HomeViewControllerScreen?
     
     override func loadView() {
         screen = HomeViewControllerScreen()
@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CardData.count
