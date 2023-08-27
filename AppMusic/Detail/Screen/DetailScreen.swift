@@ -114,28 +114,28 @@ class DetailScreen: UIView {
         
         NSLayoutConstraint.activate([
             
-            cardView.topAnchor.constraint(equalTo: self.scrollView.topAnchor,constant: -(topPadding ?? 0)),
-            cardView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            cardView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: -(topPadding ?? 0)),
+            cardView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             cardView.heightAnchor.constraint(equalToConstant: 500),
-            cardView.widthAnchor.constraint(equalToConstant: self.frame.size.width),
+            cardView.widthAnchor.constraint(equalToConstant: frame.size.width),
             
-            tableView.topAnchor.constraint(equalTo: self.cardView.bottomAnchor),
-            tableView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            tableView.topAnchor.constraint(equalTo: cardView.bottomAnchor),
+            tableView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             tableView.heightAnchor.constraint(equalToConstant: CGFloat((80 * (cardModel?.cardList?.count ?? 0)) + 20)),
-            tableView.widthAnchor.constraint(equalToConstant: self.frame.size.width),
-            tableView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            tableView.widthAnchor.constraint(equalToConstant: frame.size.width),
+            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            closeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            closeButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             closeButton.widthAnchor.constraint(equalToConstant: 30),
             closeButton.heightAnchor.constraint(equalToConstant: 30),
-            closeButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,constant: 10),
+            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
             
-            navBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            navBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            navBar.leadingAnchor.constraint(equalTo: leadingAnchor),
+            navBar.trailingAnchor.constraint(equalTo: trailingAnchor),
             navBar.heightAnchor.constraint(equalToConstant: ((topPadding ?? 0.0) + 80)),
             
-            playerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            playerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            playerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            playerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             playerView.heightAnchor.constraint(equalToConstant: 120)
         ])
         

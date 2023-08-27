@@ -11,7 +11,7 @@ import MarqueeLabel
 class CustomPlayerView: UIView {
     
     var videoTimer: Timer?
-    var time:CGFloat = 0.0
+    var time: CGFloat = 0.0
     
     lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -42,11 +42,11 @@ class CustomPlayerView: UIView {
     }()
     
     lazy var trackBar: UIProgressView = {
-        let view = UIProgressView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.progressTintColor = .yellow.withAlphaComponent(0.8)
-        view.progress = 0.0
-        return view
+        let progress = UIProgressView()
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        progress.progressTintColor = .yellow.withAlphaComponent(0.8)
+        progress.progress = 0.0
+        return progress
     }()
     
     
@@ -70,39 +70,39 @@ class CustomPlayerView: UIView {
         self.videoTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.changeTrackBar), userInfo: nil, repeats: true)
     }
     
-    private func setupContraints() {
-        NSLayoutConstraint.activate([
-            
-            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 90),
-            
-            marqueeLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 10),
-            marqueeLabel.trailingAnchor.constraint(equalTo: pausePlayBtn.leadingAnchor,constant: -5),
-            marqueeLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 32),
-            
-            pausePlayBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            pausePlayBtn.topAnchor.constraint(equalTo: self.topAnchor,constant: 25),
-            pausePlayBtn.heightAnchor.constraint(equalToConstant: 40),
-            pausePlayBtn.widthAnchor.constraint(equalToConstant: 40),
-            
-            trackBar.leadingAnchor.constraint(equalTo: imageView.trailingAnchor),
-            trackBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            trackBar.topAnchor.constraint(equalTo: self.topAnchor)
-        ])
-    }
-    
     @objc func changeTrackBar() {
         time += 0.001
         trackBar.progress = Float(self.time / 120)
-        if time >= 120{
+        if time >= 120 {
             videoTimer?.invalidate()
             videoTimer = nil
         }
     }
     
-    public func setupView(data:CardListModel) {
+    private func setupContraints() {
+        NSLayoutConstraint.activate([
+            
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 90),
+            
+            marqueeLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,constant: 10),
+            marqueeLabel.trailingAnchor.constraint(equalTo: pausePlayBtn.leadingAnchor,constant: -5),
+            marqueeLabel.topAnchor.constraint(equalTo: topAnchor,constant: 32),
+            
+            pausePlayBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            pausePlayBtn.topAnchor.constraint(equalTo: topAnchor,constant: 25),
+            pausePlayBtn.heightAnchor.constraint(equalToConstant: 40),
+            pausePlayBtn.widthAnchor.constraint(equalToConstant: 40),
+            
+            trackBar.leadingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            trackBar.trailingAnchor.constraint(equalTo: trailingAnchor),
+            trackBar.topAnchor.constraint(equalTo: topAnchor)
+        ])
+    }
+    
+    public func setupView(data: CardListModel) {
         imageView.image = UIImage(named: data.listImage ?? "")
         marqueeLabel.text = data.listTitle
         time = 0.0

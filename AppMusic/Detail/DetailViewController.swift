@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum StateAnimation{
+enum StateAnimation {
     case long
     case short
 }
